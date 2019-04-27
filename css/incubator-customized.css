@@ -1,0 +1,15 @@
+#board-tools {
+	width: 40%;
+}
+
+#datasources {
+	width: 30%;
+	float: left;
+
+}
+
+#incubator-controller {
+	float: left;
+    width: 20%;
+    padding-left: 1%;
+}
