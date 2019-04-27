@@ -19,11 +19,94 @@
 				{
 					"type": "gauge",
 					"settings": {
-						"title": "Test",
+						"title": "Temperature Sensor 1",
 						"value": "datasources[\"Test\"][0]",
 						"units": "",
 						"min_value": 0,
 						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Temperature Sensor 1 Trend",
+						"value": [
+							"datasources[\"Test\"][0]"
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Incubator Camera",
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "picture",
+					"settings": {
+						"src": "file:///Users/michaelwang/Documents/workspace/SJSU/iot-incubator-dashboard/img/test.jpg",
+						"refresh": 40
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 9
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Temperature Sensor 2",
+						"value": "datasources[\"Test\"][1]",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 7
+			},
+			"col": {
+				"3": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Temperature Sensor 2 Trend",
+						"value": [
+							"datasources[\"Test\"][1]"
+						]
 					}
 				}
 			]
