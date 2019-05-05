@@ -20,7 +20,7 @@
 					"type": "gauge",
 					"settings": {
 						"title": "Temperature Sensor 1",
-						"value": "datasources[\"Test\"][0]",
+						"value": "datasources[\"Sensor Data\"][\"ntc\"]",
 						"units": "",
 						"min_value": 0,
 						"max_value": 100
@@ -43,7 +43,7 @@
 					"settings": {
 						"title": "Temperature Sensor 1 Trend",
 						"value": [
-							"datasources[\"Test\"][0]"
+							"datasources[\"Sensor Data\"][\"ntc\"]"
 						]
 					}
 				}
@@ -63,29 +63,8 @@
 				{
 					"type": "picture",
 					"settings": {
-						"src": "file:///Users/michaelwang/Documents/workspace/SJSU/iot-incubator-dashboard/img/test.jpg",
+						"src": "datasources[\"Cam Img Path\"]",
 						"refresh": 40
-					}
-				}
-			]
-		},
-		{
-			"width": 1,
-			"row": {
-				"3": 9
-			},
-			"col": {
-				"3": 1
-			},
-			"col_width": 1,
-			"widgets": [
-				{
-					"type": "gauge",
-					"settings": {
-						"title": "Temperature Sensor 2",
-						"value": "datasources[\"Test\"][1]",
-						"min_value": 0,
-						"max_value": 100
 					}
 				}
 			]
@@ -105,8 +84,29 @@
 					"settings": {
 						"title": "Temperature Sensor 2 Trend",
 						"value": [
-							"datasources[\"Test\"][1]"
+							"datasources[\"Sensor Data\"][\"dht\"]"
 						]
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 9
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Temperature Sensor 2",
+						"value": "datasources[\"Sensor Data\"][\"dht\"]",
+						"min_value": 0,
+						"max_value": 100
 					}
 				}
 			]
@@ -114,12 +114,22 @@
 	],
 	"datasources": [
 		{
-			"name": "Test",
+			"name": "Sensor Data",
 			"type": "JSON",
 			"settings": {
-				"url": "http://localhost:3000/test",
+				"url": "http://localhost:3000/sensor/data",
 				"use_thingproxy": false,
 				"refresh": 5,
+				"method": "GET"
+			}
+		},
+		{
+			"name": "Cam Img Path",
+			"type": "JSON",
+			"settings": {
+				"url": "http://localhost:3000/cam/image",
+				"use_thingproxy": true,
+				"refresh": 10,
 				"method": "GET"
 			}
 		}
