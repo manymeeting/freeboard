@@ -894,7 +894,7 @@ freeboard.loadDatasourcePlugin({
 				unitsElement.hide();
 			}
 
-			var valueFontSize = 30;
+			var valueFontSize = 18;
 
 			if(newSettings.size == "big")
 			{
