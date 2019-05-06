@@ -19,8 +19,8 @@
 				{
 					"type": "gauge",
 					"settings": {
-						"title": "Temperature Sensor 1",
-						"value": "datasources[\"Sensor Data\"][\"ntc\"]",
+						"title": "DHT Temperature",
+						"value": "datasources[\"Sensor Data\"][\"dht\"]",
 						"units": "",
 						"min_value": 0,
 						"max_value": 100
@@ -31,7 +31,7 @@
 		{
 			"width": 1,
 			"row": {
-				"3": 1
+				"3": 7
 			},
 			"col": {
 				"3": 2
@@ -41,9 +41,9 @@
 				{
 					"type": "sparkline",
 					"settings": {
-						"title": "Temperature Sensor 1 Trend",
+						"title": "Humidity Trend",
 						"value": [
-							"datasources[\"Sensor Data\"][\"ntc\"]"
+							"datasources[\"Sensor Data\"][\"hum\"]"
 						]
 					}
 				}
@@ -72,7 +72,7 @@
 		{
 			"width": 1,
 			"row": {
-				"3": 7
+				"3": 1
 			},
 			"col": {
 				"3": 2
@@ -82,7 +82,7 @@
 				{
 					"type": "sparkline",
 					"settings": {
-						"title": "Temperature Sensor 2 Trend",
+						"title": "DHT Trend",
 						"value": [
 							"datasources[\"Sensor Data\"][\"dht\"]"
 						]
@@ -103,10 +103,31 @@
 				{
 					"type": "gauge",
 					"settings": {
-						"title": "Temperature Sensor 2",
-						"value": "datasources[\"Sensor Data\"][\"dht\"]",
+						"title": "Humidity",
+						"value": "datasources[\"Sensor Data\"][\"hum\"]",
 						"min_value": 0,
 						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 13
+			},
+			"col": {
+				"3": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Motion Alert",
+						"size": "regular",
+						"value": "datasources[\"Motion Alert\"]",
+						"animate": true
 					}
 				}
 			]
@@ -130,6 +151,17 @@
 				"url": "http://localhost:3000/cam/image",
 				"use_thingproxy": true,
 				"refresh": 10,
+				"method": "GET",
+				"name": "Cam Img Path"
+			}
+		},
+		{
+			"name": "Motion Alert",
+			"type": "JSON",
+			"settings": {
+				"url": "http://localhost:3000/motion",
+				"use_thingproxy": true,
+				"refresh": 5,
 				"method": "GET"
 			}
 		}
